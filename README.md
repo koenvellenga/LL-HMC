@@ -1,4 +1,4 @@
-# Last layer Hamiltonian Monte Carlo
+# Last Layer Hamiltonian Monte Carlo
 Implementation for the Last Layer Hamiltonian Monte Carlo paper.
 
 ### Example to perform sampling and the evaluation
