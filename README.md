@@ -53,8 +53,8 @@ mcmc = MCMC(nuts_kernel, num_samples=num_samples, warmup_steps=burnin_samples, n
 # Run the HMC sampling and obtain the sampled parameters
 mcmc.run(X_train, y_train)
 posterior_samples = mcmc.get_samples()
-weight_samples = torch.concat([weight_samples, posterior_samples['layers.0.weight']])
-bias_samples = torch.concat([bias_samples, posterior_samples['layers.0.bias']])
+weight_samples = posterior_samples['layers.0.weight']
+bias_samples = posterior_samples['layers.0.bias']
 
 # Model torch wrapper for the sampled last layer parameters 
 model = VmappedLinearLayer(weight_samples, bias_samples)
